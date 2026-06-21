@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <a href="https://skills.sh/X-Saikat-93/opencode-rtk-skill"><img alt="skills.sh" src="https://img.shields.io/badge/skills.sh-ready-111827?logo=vercel&logoColor=white"></a>
+  <a href="https://github.com/X-Saikat-93/opencode-rtk-skill#install"><img alt="skills.sh" src="https://img.shields.io/badge/install%20with-skills.sh-111827?logo=vercel&logoColor=white"></a>
   <a href="https://github.com/X-Saikat-93/opencode-rtk-skill/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/X-Saikat-93/opencode-rtk-skill/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-16a34a.svg"></a>
-  <a href="VERSION"><img alt="Version" src="https://img.shields.io/badge/version-4.0.0-2563eb.svg"></a>
+  <a href="VERSION"><img alt="Version" src="https://img.shields.io/badge/version-4.1.0-2563eb.svg"></a>
   <img alt="No telemetry" src="https://img.shields.io/badge/telemetry-none-16a34a.svg">
   <img alt="Plugin free" src="https://img.shields.io/badge/opencode_plugin-not_required-f97316.svg">
   <img alt="Zero deps" src="https://img.shields.io/badge/dependencies-zero-7c3aed.svg">
@@ -23,6 +23,20 @@
 **OpenCode RTK Skill** is a production-grade Agent Skill that makes coding agents prefer `rtk` command wrappers so terminal output stays compact, useful, and token-efficient.
 
 Supports: OpenCode, Claude Code, Codex, Antigravity, any agent that reads Agent Skills or `AGENTS.md`.
+
+---
+
+## Quick install
+
+```bash
+# Install RTK first
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+
+# Install the skill via skills.sh
+npx skills add X-Saikat-93/opencode-rtk-skill --skill rtk-token-saver -a opencode -y
+```
+
+Then tell your agent: **"Use the rtk-token-saver skill."**
 
 ---
 
@@ -335,6 +349,7 @@ opencode-rtk-skill/
 ├── CODE_OF_CONDUCT.md
 ├── NOTICE
 ├── checksums.sha256
+├── skills.sh.json               # skills.sh discovery manifest
 └── LICENSE (MIT)
 ```
 

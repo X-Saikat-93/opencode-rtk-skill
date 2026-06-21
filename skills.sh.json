@@ -1,0 +1,11 @@
+{
+  "name": "opencode-rtk-skill",
+  "description": "Skill-native RTK token optimization for OpenCode, Claude Code, Codex, Antigravity, and AGENTS.md-compatible coding agents.",
+  "skills": [
+    {
+      "name": "rtk-token-saver",
+      "description": "Use this in code repositories whenever an agent needs to run terminal commands, inspect files, search code, view Git status or diffs, run builds, tests, linters, type checks, package managers, logs, Docker, Kubernetes, or database commands. This skill makes the agent prefer RTK wrappers to reduce noisy command output and save context tokens. Do not use for non-coding conversations.",
+      "path": "skills/rtk-token-saver/SKILL.md"
+    }
+  ]
+}
