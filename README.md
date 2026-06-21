@@ -13,8 +13,13 @@
   <a href="https://github.com/X-Saikat-93/opencode-rtk-skill/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/X-Saikat-93/opencode-rtk-skill/actions/workflows/ci.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-16a34a.svg"></a>
   <a href="VERSION"><img alt="Version" src="https://img.shields.io/badge/version-4.1.0-2563eb.svg"></a>
+  <a href="https://github.com/X-Saikat-93/opencode-rtk-skill/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/X-Saikat-93/opencode-rtk-skill?style=flat&logo=github&color=f5c542"></a>
+  <a href="https://github.com/X-Saikat-93/opencode-rtk-skill/issues"><img alt="Issues" src="https://img.shields.io/github/issues/X-Saikat-93/opencode-rtk-skill?style=flat&color=e34f26"></a>
+  <a href="https://github.com/X-Saikat-93/opencode-rtk-skill/pulls"><img alt="PRs" src="https://img.shields.io/github/issues-pr/X-Saikat-93/opencode-rtk-skill?style=flat&color=2ea44f"></a>
+  <img alt="Platform" src="https://img.shields.io/badge/platform-linux%20|%20macOS%20|%20windows-6c5ce7">
+  <img alt="Shell" src="https://img.shields.io/badge/shell-bash-4eaa25">
   <img alt="No telemetry" src="https://img.shields.io/badge/telemetry-none-16a34a.svg">
-  <img alt="Plugin free" src="https://img.shields.io/badge/opencode_plugin-not_required-f97316.svg">
+  <img alt="Plugin free" src="https://img.shields.io/badge/plugin-not_required-f97316.svg">
   <img alt="Zero deps" src="https://img.shields.io/badge/dependencies-zero-7c3aed.svg">
 </p>
 
