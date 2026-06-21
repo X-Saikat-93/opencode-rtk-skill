@@ -109,11 +109,17 @@ source ~/.zshrc
 cargo install --git https://github.com/rtk-ai/rtk --force
 ```
 
-**Windows:** Use WSL, then follow Linux steps above.
+**Windows:**
 
-Verify:
+| Approach | How to | When to use |
+|---|---|---|
+| **WSL (recommended)** | Install WSL2 + Ubuntu, then follow Linux steps above | Full compatibility, best dev experience |
+| **Git Bash** | Open Git Bash, run Linux curl command above | Lightweight, works with most agents |
+| **Native binary** | Download `rtk.exe` from [rtk releases](https://github.com/rtk-ai/rtk/releases), place in a PATH folder | PowerShell / cmd users |
 
-```bash
+After RTK is on PATH, verify:
+
+```cmd
 rtk --version
 rtk gain
 ```
@@ -136,7 +142,9 @@ Use without installing (temporary):
 npx skills use X-Saikat-93/opencode-rtk-skill@rtk-token-saver
 ```
 
-### Via local installer (deterministic, any OS)
+### Via local installer (Linux, macOS, WSL, Git Bash)
+
+Requires a Bash environment (WSL or Git Bash on Windows).
 
 ```bash
 git clone https://github.com/X-Saikat-93/opencode-rtk-skill.git
