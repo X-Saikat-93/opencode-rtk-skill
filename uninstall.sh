@@ -58,7 +58,9 @@ remove_managed_block() {
   info "Removing managed block: $file"
   if [[ "$dry" == "1" ]]; then info "Dry run: no changes."; return 0; fi
 
-  local backup="${file}.backup-$(date +%Y%m%d-%H%M%S)"
+  local backup ts
+  ts="$(date +%Y%m%d-%H%M%S)"
+  backup="${file}.backup-${ts}"
   local tmp
   tmp="$(mktemp "$(dirname -- "$file")/.rtk-uninstall.XXXXXX")"
 
@@ -80,7 +82,9 @@ remove_skill_path() {
   info "Removing installed skill path: $path"
   if [[ "$dry" == "1" ]]; then info "Dry run: no changes."; return 0; fi
 
-  local backup="${path}.removed-$(date +%Y%m%d-%H%M%S)"
+  local backup ts
+  ts="$(date +%Y%m%d-%H%M%S)"
+  backup="${path}.removed-${ts}"
   mv -- "$path" "$backup"
   info "Moved to backup: $backup"
 }
