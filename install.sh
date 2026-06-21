@@ -18,8 +18,7 @@ fi
 
 # Portable unique timestamp (no GNU %N dependency, macOS-safe)
 _BACKUP_SEQ=0
-ts() {
-  _BACKUP_SEQ=$((_BACKUP_SEQ + 1))
+ts_label() {
   printf '%s-%s-%s' "$(date +%Y%m%d-%H%M%S)" "${_BACKUP_SEQ}" "$$"
 }
 
@@ -121,8 +120,9 @@ rotate_backups() {
 backup_file() {
   local file="$1"
   if [[ -f "$file" ]]; then
+    _BACKUP_SEQ=$((_BACKUP_SEQ + 1))
     local _ts
-    _ts="$(ts)"
+    _ts="$(ts_label)"
     local backup="${file}.backup-${_ts}"
     cp -p -- "$file" "$backup"
     info "Backup created: $backup"
@@ -204,8 +204,9 @@ copy_skill_dir() {
   mkdir -p -- "$(dirname -- "$dest")"
   if [[ -e "$dest" ]]; then
     if [[ -L "$dest" ]]; then die "refusing symlink skill destination: $dest"; fi
+    _BACKUP_SEQ=$((_BACKUP_SEQ + 1))
     local _ts
-    _ts="$(ts)"
+    _ts="$(ts_label)"
     local backup="${dest}.backup-${_ts}"
     mv -- "$dest" "$backup"
     info "Existing skill backed up: $backup"
