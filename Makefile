@@ -13,6 +13,7 @@ test:
 	@bash -n scripts/verify.sh
 	@bash -n scripts/print-targets.sh
 	@bash -n skills/rtk-token-saver/scripts/check-rtk.sh
+	@sha256sum -c checksums.sha256
 	@./tests/test-install-uninstall.sh
 
 lint: test
