@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="RTK Token Saver">
+  <rect width="256" height="256" rx="56" fill="#0f766e"/>
+  <path d="M60 76h136v28H60zM60 114h88v28H60zM60 152h136v28H60z" fill="#ecfeff"/>
+  <path d="M168 116l24 24-24 24" fill="none" stroke="#99f6e4" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

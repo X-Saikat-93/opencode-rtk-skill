@@ -1,0 +1,16 @@
+interface:
+  display_name: "RTK Token Saver"
+  short_description: "Prefer RTK command wrappers to reduce terminal-output token usage."
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#0F766E"
+  default_prompt: "Use the rtk-token-saver skill for terminal commands in this repository."
+
+policy:
+  allow_implicit_invocation: true
+
+dependencies:
+  tools:
+    - type: "cli"
+      value: "rtk"
+      description: "RTK command-line proxy must be installed and available on PATH."
