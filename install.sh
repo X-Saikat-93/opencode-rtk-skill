@@ -16,6 +16,13 @@ if [[ -f "${SCRIPT_DIR}/VERSION" ]]; then
   read -r VERSION < "${SCRIPT_DIR}/VERSION"
 fi
 
+# Portable unique timestamp (no GNU %N dependency, macOS-safe)
+_BACKUP_SEQ=0
+ts() {
+  _BACKUP_SEQ=$((_BACKUP_SEQ + 1))
+  printf '%s-%s-%s' "$(date +%Y%m%d-%H%M%S)" "${_BACKUP_SEQ}" "$$"
+}
+
 usage() {
   cat <<'USAGE'
 Usage:
@@ -114,9 +121,9 @@ rotate_backups() {
 backup_file() {
   local file="$1"
   if [[ -f "$file" ]]; then
-    local ts
-    ts="$(date +%Y%m%d-%H%M%S-%N)"
-    local backup="${file}.backup-${ts}"
+    local _ts
+    _ts="$(ts)"
+    local backup="${file}.backup-${_ts}"
     cp -p -- "$file" "$backup"
     info "Backup created: $backup"
     rotate_backups "${file}.backup-*" 5
@@ -197,9 +204,9 @@ copy_skill_dir() {
   mkdir -p -- "$(dirname -- "$dest")"
   if [[ -e "$dest" ]]; then
     if [[ -L "$dest" ]]; then die "refusing symlink skill destination: $dest"; fi
-    local ts
-    ts="$(date +%Y%m%d-%H%M%S-%N)"
-    local backup="${dest}.backup-${ts}"
+    local _ts
+    _ts="$(ts)"
+    local backup="${dest}.backup-${_ts}"
     mv -- "$dest" "$backup"
     info "Existing skill backed up: $backup"
     rotate_backups "${dest}.backup-*" 5

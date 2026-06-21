@@ -69,20 +69,47 @@ The skill is a **portable instruction pack** loaded via `skills/rtk-token-saver/
 
 ---
 
+## Skill name
+
+The skill is registered as **`rtk-token-saver`**.
+
+After install, tell your agent:
+
+> Use the `rtk-token-saver` skill.
+
+Or if your agent supports skill auto-detection, it loads automatically from `skills/rtk-token-saver/SKILL.md`.
+
+---
+
 ## Install
 
 ### Prerequisites: RTK
+
+**Linux / macOS:**
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
 ```
 
-Add to PATH if needed:
+Add to PATH:
 
 ```bash
+# Bash
 echo 'export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
+
+# Zsh (macOS default)
+echo 'export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
 ```
+
+**Cargo alternative (any OS):**
+
+```bash
+cargo install --git https://github.com/rtk-ai/rtk --force
+```
+
+**Windows:** Use WSL, then follow Linux steps above.
 
 Verify:
 
@@ -91,25 +118,25 @@ rtk --version
 rtk gain
 ```
 
-### Via skills.sh (recommended)
+### Via skills.sh (recommended, any OS)
 
 ```bash
 npx skills add X-Saikat-93/opencode-rtk-skill --skill rtk-token-saver
 ```
 
-Specific agents:
+For specific agents:
 
 ```bash
 npx skills add X-Saikat-93/opencode-rtk-skill --skill rtk-token-saver -a opencode -a claude-code -a codex -a antigravity
 ```
 
-Use without installing:
+Use without installing (temporary):
 
 ```bash
 npx skills use X-Saikat-93/opencode-rtk-skill@rtk-token-saver
 ```
 
-### Via local installer (deterministic)
+### Via local installer (deterministic, any OS)
 
 ```bash
 git clone https://github.com/X-Saikat-93/opencode-rtk-skill.git
@@ -146,7 +173,7 @@ Run the skill's built-in RTK check:
 ./skills/rtk-token-saver/scripts/check-rtk.sh
 ```
 
-Then ask your agent:
+Then ask your agent to load the **rtk-token-saver** skill:
 
 ```text
 Use the rtk-token-saver skill. Run: rtk git status
